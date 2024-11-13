@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Willkommen bei der Fitness-App!</h1>
+    <p>Gib deine Daten ein, um deinen Trainingsplan zu erhalten:</p>
+    <!-- Hier kannst du ein Formular hinzufügen, um Nutzerdaten zu erfassen -->
+    <form action="/get-training-plan" method="POST">
+      <!-- Beispiel für Felder, die du abfragen kannst -->
+      <input type="text" name="username" placeholder="Benutzername" required />
+      <input type="number" name="age" placeholder="Alter" required />
+      <input
+        type="text"
+        name="fitness_level"
+        placeholder="Fitness Level (Anfänger/Mittel/Fortgeschritten)"
+        required
+      />
+      <input type="number" name="weight" placeholder="Gewicht" required />
+      <input
+        type="number"
+        name="training_hours"
+        placeholder="Trainingsstunden pro Woche"
+        required
+      />
+      <button type="submit">Trainingsplan erhalten</button>
+    </form>
+  </body>
+</html>
